@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.chaquo.python'
-    id 'org.jetbrains.kotlin.android' // Remove if you're not using Kotlin
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
@@ -10,51 +10,32 @@ android {
 
     defaultConfig {
         applicationId "com.goofwear.instaloader"
-        minSdk 24
+        minSdk 21
         targetSdk 34
         versionCode 1
         versionName "1.0"
 
         python {
-            // Optional: custom pythonPath or version
+            pip {
+                install "requests"
+                // Add more pip packages if needed
+            }
         }
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile(
+                'proguard-android-optimize.txt'
+            ), 'proguard-rules.pro'
         }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-        jvmTarget = '17'
-    }
-
-    buildFeatures {
-        viewBinding true
-    }
-}
-
-python {
-    pip {
-        install "instaloader"
     }
 }
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
-
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
