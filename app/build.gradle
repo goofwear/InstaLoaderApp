@@ -19,7 +19,7 @@ android {
             abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
         }
 
-        // ✅ Chaquopy Python config GOES HERE (inside defaultConfig)
+        // ✅ Chaquopy Python configuration (correct block)
         python {
             buildPython "python3"
             pip {
@@ -58,10 +58,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
 
-    implementation 'com.chaquo.python:gradle'
+    // ✅ Removed: com.chaquo.python:gradle — not needed
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
-
