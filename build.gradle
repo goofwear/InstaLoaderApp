@@ -7,13 +7,6 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:8.0.0"
         classpath "com.chaquo.python:gradle:14.0.2"
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        maven { url "https://chaquo.com/maven" }
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22" // ✅ ADD THIS
     }
 }
