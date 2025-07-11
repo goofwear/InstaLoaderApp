@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.chaquo.python' // use version 14.0.2 implicitly
+    id 'com.chaquo.python'
 }
 
 android {
@@ -41,7 +41,9 @@ android {
     buildFeatures {
         viewBinding true
     }
+}
 
+chaquopy {
     python {
         buildPython "python3"
         pip {
