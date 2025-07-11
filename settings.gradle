@@ -3,14 +3,18 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven { url "https://chaquo.com/maven" } // Required for Chaquopy
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        maven { url "https://chaquo.com/maven" } // Required for Chaquopy
     }
 }
+
 rootProject.name = "InstaLoader"
 include ':app'
