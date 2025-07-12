@@ -36,12 +36,6 @@ android {
     }
 }
 
-python {
-    version "3.8"
-    pip {
-        install "instaloader"
-    }
-}
 
 dependencies {
     implementation "androidx.core:core-ktx:1.10.1"
